@@ -714,45 +714,45 @@ hr {
   text-align: center;
   background-size: cover;
   padding: 80px 0;
-  background: url(../img/page-heading/default-heading-bg.jpg) no-repeat; /* This is the default background of all page's heading */
+  background: url(/assets/page-heading/default-heading-bg.jpg) no-repeat; /* This is the default background of all page's heading */
   background-attachment: fixed;
   background-position: 50%;
 }
 .page-heading.shop-page,
 .page-heading.product-details-page,
 .page-heading.checkout-page {
-  background: url(../img/page-heading/shop-heading-bg.jpg) no-repeat;
+  background: url(/assets/page-heading/shop-heading-bg.jpg) no-repeat;
   background-attachment: fixed;
   background-position: 50%; 
   background-size: cover;
 }
 .page-heading.works-page {
-  background: url(../img/page-heading/works-heading-bg.jpg) no-repeat; 
+  background: url(/assets/page-heading/works-heading-bg.jpg) no-repeat; 
   background-attachment: fixed;
   background-position: 50%; 
   background-size: cover;
 }
 .page-heading.team-page {
-  background: url(../img/page-heading/team-heading-bg.jpg) no-repeat;
+  background: url(/assets/page-heading/team-heading-bg.jpg) no-repeat;
   background-attachment: fixed;
   background-position: 50%; 
   background-size: cover;
 }
 .page-heading.blog-page,
 .page-heading.single-post-page {
-  background: url(../img/page-heading/blog-heading-bg.jpg) no-repeat; 
+  background: url(/assets/page-heading/blog-heading-bg.jpg) no-repeat; 
   background-attachment: fixed;
   background-position: 50%; 
   background-size: cover;
 }
 .page-heading.contact-page {
-  background: url(../img/page-heading/contact-heading-bg.jpg) no-repeat; 
+  background: url(/assets/page-heading/contact-heading-bg.jpg) no-repeat; 
   background-attachment: fixed;
   background-position: 50%; 
   background-size: cover;
 }
 .page-heading.services-page {
-  background: url(../img/page-heading/default-heading-bg.jpg) no-repeat; 
+  background: url(/assets/page-heading/default-heading-bg.jpg) no-repeat; 
   background-attachment: fixed;
   background-position: 50%; 
   background-size: cover;
@@ -1050,7 +1050,7 @@ hr {
   background-color: #222;
 }
 footer {
-  background: url(../img/footer/bg.jpg);
+  background: url(/assets/footer/bg.jpg);
   background-size: cover;
   background-position: 50%;
   position: relative;
@@ -1077,7 +1077,7 @@ footer {
 }
 .footer-bottom::before {
   content: " ";
-  background: url(../img/footer/footer-bottom/footer-bottom-bg.png) no-repeat;
+  background: url(/assets/footer/footer-bottom/footer-bottom-bg.png) no-repeat;
   background-size: 100% 21px;
   width: 95%;
   height: 21px;
@@ -1236,7 +1236,7 @@ footer a {
   content: " ";
   position: absolute;
   bottom: -55px;
-  background : url(../img/section-heading/section-heading-icon.png) no-repeat;
+  background : url(/assets/section-heading/section-heading-icon.png) no-repeat;
   width: 118px;
   height: 42px;
   margin-left: auto;
@@ -1524,7 +1524,7 @@ footer a {
 }
 /* Call to action with image background */
 .call-to-action-with-img {
-  background: url(../img/call-to-action/bg.jpg) no-repeat;
+  background: url(/assets/call-to-action/bg.jpg) no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: 60% 50%;
@@ -1657,7 +1657,7 @@ footer a {
     22_Partners
 ========================================================================== */
 .partners {
-  background: url(../img/partners/bg.jpg) no-repeat;
+  background: url(/assets/partners/bg.jpg) no-repeat;
   background-position: 50%;
   background-size: cover;
   background-attachment: fixed;
@@ -1670,7 +1670,7 @@ footer a {
     23_Testimonials
 ========================================================================== */
 #testimonials {
-  background: url(../img/testimonials/bg.jpg);
+  background: url(/assets/testimonials/bg.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50%;
@@ -1686,7 +1686,7 @@ footer a {
 }
 .testimonial::after {
   content: " ";
-  background: url(../img/testimonials/quote-bg.png) no-repeat;
+  background: url(/assets/testimonials/quote-bg.png) no-repeat;
   background-size: 100% 20px;
   width: 92%;
   height: 20px;
@@ -2017,7 +2017,7 @@ footer a {
   width: 100%;
 }
 .contact-left-bg {
-  background-image: url(../img/contact/bg.jpg);
+  background-image: url(/assets/contact/bg.jpg);
   background-size: cover;
   background-repeat:no-repeat;
   background-position: 50%;
@@ -2383,27 +2383,27 @@ footer a {
   position: relative;
 }
 .tab-services-content #service1 {
-  background: url(../img/services/active-img3.jpg);
+  background: url(/assets/services/active-img3.jpg);
   background-position: 50%;
 }
 .tab-services-content #service2 {
-  background: url(../img/services/active-img2.jpg);
+  background: url(/assets/services/active-img2.jpg);
   background-position: 50%;
 }
 .tab-services-content #service3 {
-  background: url(../img/services/active-img1.jpg);
+  background: url(/assets/services/active-img1.jpg);
   background-position: 50%;
 }
 .tab-services-content #service4 {
-  background: url(../img/services/active-img4.jpg);
+  background: url(/assets/services/active-img4.jpg);
   background-position: 50%;
 }
 .tab-services-content #service5 {
-  background: url(../img/services/active-img5.jpg);
+  background: url(/assets/services/active-img5.jpg);
   background-position: 50%;
 }
 .tab-services-content #service6 {
-  background: url(../img/services/active-img6.jpg);
+  background: url(/assets/services/active-img6.jpg);
   background-position: 50%;
 }
 .service-description {

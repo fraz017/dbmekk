@@ -12,7 +12,7 @@
 //
 //= require rails-ujs
 //= require jquery
-//= require bootstrap-sprockets
+//= require vendor/bootstrap.min
 //= require date_range_picker
 //= require jquery.qtip.min
 //= require moment
@@ -20,3 +20,4 @@
 //= require full_calendar
 //= require vendor/gmaps.min
 //= require vendor/owl.carousel.min
+//= require main
