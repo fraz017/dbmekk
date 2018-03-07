@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'therubyracer'
 gem 'execjs'
+gem "non-stupid-digest-assets"
 gem 'momentjs-rails'
 gem 'pry'
 gem 'activeadmin'
