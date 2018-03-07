@@ -1,0 +1,11 @@
+<% if @result %>
+  $('.error').html('');
+  $('.calendar').fullCalendar(
+    'renderEvent', 
+    $.parseJSON("<%=j render(@event, format: :json).html_safe %>"),
+    true
+  );
+  $('.modal').modal('hide');
+<% else %>
+  $('.error').html('Already booked or short interval! Please select another time slot.');
+<% end %>

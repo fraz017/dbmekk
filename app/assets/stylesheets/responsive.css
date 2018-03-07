@@ -1,0 +1,594 @@
+/* ==========================================================================
+    Responsive Stylesheet for CareCar
+========================================================================== */
+@media (min-width: 771px) {
+    .dropdown-menu>li>a {
+      border-bottom: 1px solid #efefef;
+    }
+    .dropdown-menu>li>a:hover {
+      color: #fff;
+      background: #ff9933;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+}
+@media (max-width: 1199px) {
+    .logo{
+        padding-top: 7px;
+    }
+    .media-item .media-body {
+        padding-left: 15px;
+    }
+    .media-item .media-body p,
+    .media-item .media-body a {
+      font-size: 13px;
+      margin-top: 10px;
+    }
+    .media-item .media-body p span {
+      font-size: 12px;
+      line-height: 16px;
+    }
+    .icon-wrapper i {
+        font-size: 23px;
+    }
+    .icon-wrapper {
+        width: 40px;
+        height: 40px;
+    }
+    .navbar-default .navbar-nav>li>a {
+        margin-right: 35px;
+    }
+    .call-to-action h2 {
+      font-size: 22px;
+    }
+    .call-to-action p {
+      font-size: 19px;
+    }
+    .social-media-3 li {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+    .social-media-3 li a {
+        font-size: 13px;
+        width: 30px;
+        height: 30px;
+    }
+    .social-media-3 li a i{
+        line-height: 29px;
+    }
+    .article-full {
+        max-height: 450px;
+        min-height: 450px;
+    }
+    .article-preview {
+        max-height: 150px;
+    }
+    .carousel-caption h1 {
+        font-size: 60px;
+    }
+    .carousel-caption p {
+        font-size: 19px;
+        line-height: 30px;
+    }
+    .carousel-caption .btn {
+        margin-top: 30px;
+    }
+    .box-body h3 a {
+        font-size: 18px;
+    }
+    .widget-links ul li a {
+        font-size: 15px;
+    }
+    .widget-links ul li {
+        margin-bottom: 20px;
+    }
+    .widget p {
+        margin-bottom: 15px;
+    }
+}
+@media (max-width: 991px) { 
+    .logo{
+        padding-top: 15px;
+    }
+    .icon-wrapper {
+        width: 40px;
+        height: 40px;
+    }
+    .navbar-default .navbar-nav>li>a {
+        font-size: 13px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .media-item .media-body {
+        vertical-align: top;
+        padding-left: 10px;
+    }
+    .media-item {
+        margin-bottom: 0;
+    }
+    .navbar-default .navbar-nav>li>a {
+        margin-right: 15px;
+    }
+    #our-principles h2 {
+        font-size: 33px;
+    }
+    #our-principles h2 span {
+        font-size: 28px;
+    }
+    #our-principles p {
+        font-size: 17px;
+        margin-bottom: 30px;
+        margin-top: 10px;
+    }
+    footer .widget-links,
+    footer .widget-desctption {
+        padding-bottom: 60px;
+    }
+    .call-to-action {
+        text-align: center;
+    }
+    .call-to-action .btn {
+      width: auto;
+      margin-top: 20px;
+    }
+    .social-media-3 li a {
+        font-size: 12px;
+        width: 26px;
+        height: 26px;
+    }
+    .social-media-3 li a i{
+        line-height: 25px;
+    }
+    .box-body {
+        padding: 20px;
+    }
+    .article-preview {
+        max-height: initial;
+    }
+    .article-description {
+        min-height: initial;
+        max-height: initial;
+    }
+    .carousel-caption {
+        top: 15%;
+    }
+    .carousel-caption h1 {
+        font-size: 46px;
+    }
+    .box-body {
+        min-height: 100px;
+    }
+    .box-body h3 a {
+        font-size: 15px;
+    }
+    .page-pagination li a {
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+    .service-description {
+        padding: 30px;
+    }
+    .services-tabs>li>a {
+        font-size: 16px;
+        padding: 15px;
+    }
+    .principles-details h3 a {
+        font-size: 18px;
+    }
+    .principles-details p {
+        font-size: 14px;
+        line-height: 26px;
+    }
+    .box-body p {
+        font-size: 15px;
+        line-height: 24px;
+    }
+    .info-product h2 {
+        font-size: 28px;
+    }
+    .product-details-price {
+        font-size: 32px;
+    }
+    .default-form .billing-details label.radio-inline {
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 767px) {
+    .logo{
+        padding: 0;
+    }
+    .navbar-brand {
+        height: 80px !important;
+        padding: 9px 15px !important;
+    }
+    .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
+        color: #000;
+        background: transparent;
+        border-bottom: 3px solid #000;
+    }
+    .navbar-default{
+        background: #ffc601 !important;
+    }
+    .img-responsive {
+        width: 100%;
+    }
+    .top-header {
+        background: #262626!important;
+    }
+    .logo-section-wrapper {
+        display: none;
+        min-height: 0;
+        padding: 0;
+    }
+    .widget-desctption .logo {
+        width: initial;
+    }
+    .navbar-brand {
+      display: inline-block;
+    }
+    .navbar-brand img{
+      width: 200px;
+    }
+    .navbar-nav {
+        margin: 0 15px;
+    }
+    .navbar-toggle {
+        margin : 15px 15px 15px 0;
+    }
+    .navbar-onepage .navbar-nav {
+        margin: 15px;
+    }
+    .make-appointment {
+        background: transparent;
+    }
+    .navbar-default .navbar-toggle {
+        border-color: transparent;
+        padding-right: 0; 
+        padding-top: 16px;
+    }
+    .navbar-default .navbar-toggle:hover, 
+    .navbar-default .navbar-toggle:focus {
+        border-color: transparent;
+        background: transparent;
+    }
+    .navbar-default .navbar-toggle .icon-bar {
+        color: #000;
+        background-color: #000;
+    }
+    .navbar-default .navbar-nav>li>a {
+        margin-right: 0;
+    }
+    .navbar-form {
+        margin: 8px 0;
+    }
+    .btn-search {
+        top: 20px;
+    }
+    .navbar-default .navbar-nav>.open>a, 
+    .navbar-default .navbar-nav>.open>a:hover, 
+    .navbar-default .navbar-nav>.open>a:focus {
+        color: #ff9933;
+        background: transparent;
+        border-color: #ff9933; 
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+        color: #dcdcdc;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
+        color: #fff;
+    }
+    .navbar-nav .open .dropdown-menu>li>a {
+        padding: 15px;
+    }
+    .navbar-scrolled {
+        background: #ffc601d9 !important;
+    }
+    .navbar-default.navbar-scrolled .navbar-nav>li>a {
+        line-height: 20px;
+    }
+    .our-principles-img {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .detail {
+        margin-bottom: 60px;
+    }
+    .detail:last-child {
+        margin-bottom: 0px;
+    }
+    footer .widget-recent-projects {
+        padding-bottom: 60px;
+    }
+    .owl-carousel .owl-nav {
+        display: none;
+    }
+    .page-heading h1 {
+      font-size: 40px;
+    }
+    .services-tabs>li>a {
+        padding: 15px;
+        font-size: 12px;
+    }
+    .modal-body {
+      padding: 50px 40px;
+    }
+    .modal-login .btn {
+        width: 100%;
+    }
+    .returning-customer {
+        margin-bottom: 20px;
+    }
+    .modal-dialog {
+        margin-top: 30px;
+    }
+    .info-product {
+        margin-top: 30px;
+    }
+    .carousel-caption {
+        top: 33%;
+    }
+    .carousel-caption h1 {
+        font-size: 21px;
+    }
+    .carousel-caption p{
+        display: none;
+    }
+    .carousel-caption .btn {
+        padding: 0;
+        background-color: transparent;
+        color: #fff;
+        box-shadow: 0 0 0;
+        margin-top: 0px;
+        border: 0;
+    }
+    #our-principles {
+        padding-top: 75px;
+    }
+    .article-full {
+        max-height: initial;
+        min-height: initial;
+    }
+    .article-content-wrapper {
+        position: relative;
+        padding: 30px;
+        background-color: #1b1b1b;
+        height: auto;
+        top: -1px;
+    }
+    .article-content {
+        position: relative;
+        height: auto;
+        padding: 0;
+    }
+    .testimonial {
+      padding: 0 60px 60px;
+    }
+    #contact-form {
+        padding-left: 0;
+        margin-top: 45px;
+    }
+    .box-body {
+        min-height: initial;
+    }
+    .box-body p {
+        margin-bottom: 0;
+    }
+    .call-to-action h2 {
+        margin-bottom: 30px;
+        line-height: 36px;
+    }
+    .author .media-l {
+        padding-right: 25px;
+    }
+    .author .media-l img,
+    .comment .media-l img {
+        width: 100px;
+    }
+    .page-pagination {
+        padding: 15px;
+    }
+    .page-pagination li a {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .services-nav,
+    .services-nav-collapse {
+      display: block;
+    }
+    .services-nav .navbar-toggle {
+        margin: 0 0 25px 0;
+    }
+    .services-nav h4 {
+        margin-top: 8px;
+    }
+    .call-to-action h2 {
+        margin-bottom: 15px;
+        line-height: 30px;
+        font-size: 20px;
+    }
+    .call-to-action p {
+        font-size: 17px;
+    }
+    .pad-t-40-responsive {
+        padding-top: 40px!important;
+    }
+    .pad-t-30-responsive {
+        padding-top: 30px!important;
+    }
+    #our-principles h2 {
+        font-size: 22px;
+        line-height: 35px;
+    }
+    .article-description p {
+        font-size: 15px;
+    }
+    .box-body h3 a {
+        font-size: 19px;
+    }
+}
+@media (max-width: 480px) {
+    .top-header {
+        background: #262626!important;
+        line-height: 30px;
+        padding: 10px 0;
+    }
+    .social-media-1 {
+        text-align: center;
+    }
+    .top-header .pull-right,
+    .top-header .pull-left {
+        float: none!important;
+    }
+    #our-principles {
+        padding-top: 30px;
+    }
+    .make-appointment {
+        display: block;
+        padding-right: 0px;
+        padding-left: 0px;
+        text-align: center;
+        line-height: 30px;
+    }
+    .place-order {
+      padding : 0;
+    }
+    .place-order .btn-submit-order-xl {
+      width: 100%;
+    }
+    .radio-inline+.radio-inline, 
+    .checkbox-inline+.checkbox-inline {
+        margin-left: 0;
+    }
+    .order-details {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .order-details h3 {
+        font-size: 16px;
+    }
+    .modal-body {
+      padding: 50px 15px;
+    }
+    .carousel-caption {
+        top: 25%;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .carousel-indicators {
+        display: none;
+    }
+    .btn-down {
+        display: none;
+    }
+    .section-heading h2 {
+        font-size: 32px;
+    }
+    .custom-col-xs {
+        width: 100%;
+    }
+    .prev-testimonial-img,
+    .next-testimonial-img {
+      display: none;
+    }
+    .testimonial {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+    .testimonial-quote p {
+        font-size: 17px;
+    }
+    .more-infos .tablist li {
+        display: block;
+        margin-bottom: 5px;
+    }
+    .author .media-l {
+        padding-right: 15px;
+    }
+    .author .media-l img,
+    .comment .media-l img {
+        width: 60px;
+    }
+    .comment-head span {
+        display: block;
+    }
+    .comment-head span:before {
+        content: "";
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .comment-reply {
+        margin-left: 20px;
+    }
+    .media-body {
+        padding-left: 15px;
+    }
+    .author h5 {
+        margin-top: 0;
+    }
+    .more-infos .tab-content {
+        padding: 15px;
+    }
+    .page-pagination li a span {
+        display: none;
+    }
+    .page-pagination li a i {
+        position: relative;
+        top: 1px;
+    }
+    .page-pagination li a {
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 18px;
+        height: 18px;
+        line-height: 23px;
+    }
+    .article-standard h3, 
+    .article-standard h3 a {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .article-description p {
+        line-height: 25px;
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+    .btn {
+        font-size: 12px;
+    }
+    .section-heading h2 {
+        font-size: 27px;
+        line-height: 45px;
+    }
+    .section-heading h2 small {
+        font-size: 14px;
+    }
+    .article-description {
+        padding: 30px 15px;
+    }
+    .article-content-wrapper {
+        padding: 30px 15px;
+    }
+    .service-img-wrap .box-preview {
+        display: none;
+    }
+    .article-content h3, 
+    .article-content h3 a {
+        font-size: 20px;
+    }
+    .article-full .article-date {
+        font-size: 14px;
+    }
+    .article-content p {
+        line-height: 24px;
+        font-size: 16px;
+    }
+    .footer-bottom p {
+        line-height: 30px;
+    }
+}
+@media (max-width: 380px) {
+    .carousel-caption {
+        top: 16%;
+    }
+}

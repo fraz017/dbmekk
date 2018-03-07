@@ -1,0 +1,122 @@
+<div class="containr">
+  <table width="100%" height="66">
+    <tbody>
+      <tr>
+        <td width="213">
+          <img src="/assets/logo.png" alt="DB-MEKK">
+        </td>
+        <td class="pull-left epost">
+          <p>Epost <span class="e1">jacob@dbmekk.no</span></p>
+          <p>Tlf <span class="e2">45954545</span></p>                            
+        </td>
+        <td class="pull-right">
+          <p>Org.nr:NO 12345678 MVA</p>
+          <p>Foretaksregistered</p>                            
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="containr">
+  <table width="100%" class="Til">
+    <thead>
+      <tr>
+        <th ><p>Til</p></th>
+        <th ><p>Fra</p></th>
+        <th ><p>Faktura<span class="pull-right">#<%= @bill.id %></span></p></th>
+      </tr>
+    </thead>
+    <tbody class="Demokunde">
+      <tr>
+        <td width="341.33" class="pull-left"><b><%= @bill.event.title %></b></td>
+        <td width="341.33"><b>Fiken-demo - Eneste klipp AS</b></td>
+        <td class="tdcolor" width="330"><b>Forfallsdato</b> <span class="pull-right"><%= @bill.event.try(:start).try(:strftime, "%F") %></span></td>
+      </tr>
+      <tr>
+        <td width="341.33" class="pull-left"><%= @bill.event.try(:license_no) %></td>
+        <td width="341.33">Testveien 1</td>
+        <td class="tdcolor" width="330"><b>Kontonr</b> <span class="pull-right"><%= @bill.event.try(:license_no) %></span></td>
+      </tr>
+      <tr>
+        <td width="341.33" class="pull-left"><%= @bill.event.try(:email) %></td>
+        <td width="341.33" class="pull-left">0123 OSLO</td>
+        <td class="tdcolor" width="330"><b>A betale</b> <span class="pull-right"><%= @bill.grand_total %></span></td>
+      </tr>
+      <tr>
+        <td width="341.33" > </td>
+        <td width="341.33" > </td>
+        <td width="341.33">Dato <span class="pull-right" style="padding-right:10px;"><%= Date.today.strftime("%F") %></span></td>
+      </tr>
+      <tr>
+        <td width="341.33" > </td>
+        <td width="341.33" > </td>
+        <td width="341.33">Kundenr <span class="pull-right" style="padding-right:10px;"><%= @bill.grand_total %></span></td>
+      </tr>
+      <tr>
+        <td width="341.33" > </td>
+        <td width="341.33" > </td>
+        <td width="341.33" style="font-size:16px;">vennligst oppgi fakturanr ved betaling</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="containr-btm">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Beskrivelse</th>
+        <th>Enhetspris</th>
+        <th>Antall</th>
+        <th>Mva</th>
+        <th>Sum</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @bill.services.each do |b| %>
+        <tr>
+          <td><%= b.name %></td>
+          <td><%= b.price %></td>
+          <td>1</td>
+          <td>25%</td>
+          <td><%= b.grand_total %></td>
+        </tr>
+      <% end %>
+      <% @bill.items.each do |b| %>
+        <tr>
+          <td><%= b.name %></td>
+          <td><%= b.price %></td>
+          <td>1</td>
+          <td>25%</td>
+          <td><%= b.grand_total %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="containr">
+  <table class="end-bill">
+    <tbody>
+      <tr>
+        <td width="774" align="right">Netto</td>
+        <td width="250" align="right"><%= @bill.price %></td>
+      </tr>
+      <tr>
+        <td width="774" align="right">Mva</td>
+        <td width="250" align="right"><%= @bill.tax %></td>
+      </tr>
+      <tr style="font-size:26px;font-weight:500;">
+        <td width="774" align="right">A betale</td>
+        <td width="250" align="right"><%= @bill.grand_total %></td>
+      </tr>
+      <tr style="font-weight:500;">
+        <td width="774" align="right"></td>
+        <td width="250" align="right">Alle belop er oppgitt i NOK</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<script type="text/javascript">
+  $(window).on("load",function () {
+    window.print();
+  });
+</script>

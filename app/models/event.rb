@@ -1,0 +1,16 @@
+class Event < ApplicationRecord
+  validates :title, presence: true
+  validates :email, presence: true
+  validates :phone_number, presence: true
+  validates :license_no, presence: true
+  has_one :bill
+  attr_accessor :date_range
+  scope :in_daterange, ->(start_date, end_date) { where('end > ? and start < ?', start_date, end_date) }
+
+  def all_day_event?
+    self.start == self.start.midnight && self.end == self.end.midnight ? true : false
+  end
+  def to_s
+    license_no
+  end
+end

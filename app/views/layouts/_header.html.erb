@@ -1,0 +1,104 @@
+    <header id="header">
+        <!-- Top Header -->
+        <div class="top-header">
+            <div class="container">
+                <div class="pull-left">
+                    <!-- <ul class="social-media-1 list-inline">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    </ul> -->
+                </div><!--/.pull-left -->
+                <div class="make-appointment pull-right text-right">
+                    Make an appointment: <a href="tel:003345457845">+33 45 45 78 45</a>
+                </div>
+            </div><!--/.container -->
+        </div><!--/.top-header -->
+        <!-- End Top Header -->
+        <!-- Logo Section -->
+        <div class="logo-section-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <a href="onepage.html">
+                            <img src="/assets/header/logo.png" alt="..." class="logo logo-header img-responsive">
+                        </a>
+                    </div><!--/.col-sm-3 -->
+                    <div class="col-sm-3 media-item schedule">
+                        <div class="media-l">
+                            <div class="icon-wrapper">
+                                <i class="fa fa-clock-o"></i>
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <p>
+                                8:00 - 18:00
+                                <span>Monday to Friday</span>
+                            </p>
+                        </div>
+                    </div><!--/.col-sm-3 .media-item .schedule -->
+                    <div style="padding:0;" class="col-sm-3 media-item adress">
+                        <div class="media-l">
+                            <div class="icon-wrapper">
+                                <i class="fa fa-home"></i>
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <p>
+                                Henri Troyat, Orleans
+                                <span>Orleans 45100, FR</span>
+                            </p>
+                        </div>
+                    </div><!--/.col-sm-3 .media-item .adress -->
+                    <div class="col-sm-3 media-item media-contact-info">
+                        <div class="media-l">
+                            <div class="icon-wrapper">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <p>
+                                <a href="tel:003345457845">+33 45 45 78 45</a>
+                                <span>support@bluecar.com</span>
+                            </p>
+                        </div>
+                    </div><!--/.col-sm-3 .media-item .media-contact-info -->
+                </div><!--/.row -->
+            </div><!--/.container -->
+        </div><!--/.logo-section-wrapper -->
+        <!-- End Logo Section -->
+
+        <!-- Navbar -->
+      <% if params[:action] != "schedule" %>
+        <nav class="navbar navbar-default navbar-scroll-fixed navbar-onepage" >
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="onepage.html">
+                  <img src="/assets/header/logo-responsive.png" alt="..." class="logo logo-header img-responsive">
+              </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse sticky-menu" id="navbar-1">
+                <ul class="nav navbar-nav">
+                  <li class="current"><a href="#header">Home</a></li>
+                  <li><a href="#our-principles">Our principles</a></li>
+                  <li><a href="#services">Services</a></li>
+                  <li><a href="#team">Team</a></li>
+                  <li><a href="#testimonials">Testimonials</a></li>
+                  <li><a href="#contact-map">Contact us</a></li>
+                </ul>
+              </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      <% end %>
+        <!-- End Navbar -->
+    </header><!-- /#header -->
