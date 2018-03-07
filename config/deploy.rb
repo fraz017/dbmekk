@@ -2,7 +2,7 @@
 lock "~> 3.10.1"
 
 set :application, "dbmekk"
-set :repo_url, "https://github.com/fraz017/BFF"
+set :repo_url, "https://github.com/fraz017/dbmekk.git"
 
 set :branch, 'master'
 set :user,            'ubuntu'
@@ -12,7 +12,7 @@ set :user,            'ubuntu'
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
-set :deploy_to, "/www/zineya"
+set :deploy_to, "/www/dbmekk"
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
@@ -25,7 +25,7 @@ set :deploy_to, "/www/zineya"
 
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml", "config/secrets.yml"
-append :linked_files, "config/database.yml", "config/secrets.yml", "config/config.yml"
+append :linked_files, "config/database.yml", "config/secrets.yml"
 
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
@@ -42,7 +42,7 @@ set :keep_releases, 3
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
-set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/aws-eb) }
+# set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/aws-eb) }
 
 set :passenger_restart_with_touch, true
 

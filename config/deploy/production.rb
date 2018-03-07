@@ -9,6 +9,11 @@
 
 
 
+server '188.166.0.207', roles: [:web, :app, :db], primary: true
+set :stage,           :production
+
+set :pty, false
+
 # role-based syntax
 # ==================
 
