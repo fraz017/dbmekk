@@ -6,4 +6,8 @@ class ApplicationMailer < ActionMailer::Base
     @event = event
     mail to: 'salmanshan53@gmail.com', subject: 'New Booking alert'
   end
+  def contact(data)
+    @data = data
+    mail to: 'salmanshan53@gmail.com', subject: 'New Message'
+  end
 end

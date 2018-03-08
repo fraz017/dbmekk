@@ -501,18 +501,18 @@
                         </div><!-- /.col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="row">
-                                <form id="contact-form" method="post" class="rounded-form" action="#">
+                                <%= form_tag(contact_path, method: "post", class: "rounded-form", id: "contact-form") do %>  
                                     <div class="col-md-8">
-                                        <input id="name" type="text" name="name" placeholder="Your name" class="form-control">
-                                        <input id="email" type="email" name="email" placeholder="Email Address" class="form-control">
-                                        <input id="subject" type="text" name="subject" placeholder="Car Plate no." class="form-control">
+                                        <input id="name" type="text" name="name" placeholder="Your name" class="form-control" required="required">
+                                        <input id="email" type="email" name="email" placeholder="Email Address" class="form-control" required="required">
+                                        <input id="subject" type="text" name="subject" placeholder="Car Plate no." class="form-control" required="required">
                                         
                                     </div>
                                     <div class="col-md-12">
-                                        <textarea id="message" name="message" placeholder="Your message" class="form-control"></textarea>
+                                        <textarea id="message" name="message" placeholder="Your message" class="form-control" required="required"></textarea>
                                         <button type="submit" class="btn btn-important-xl">Submit</button>
                                     </div>
-                                </form><!-- /#contact-form -->
+                                <%end %>
                             </div><!-- /.row -->
                         </div><!-- /.col-sm-6 -->
                     </div><!-- /.row -->

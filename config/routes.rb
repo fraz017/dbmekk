@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root 'visitors#index'
   get '/schedule' => 'visitors#schedule'
   get '/generate_bill/:id' => 'visitors#generate_bill'
+  post '/contact' => 'visitors#contact'
 end
