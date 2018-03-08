@@ -4,10 +4,10 @@ class ApplicationMailer < ActionMailer::Base
 
   def notify_event(event)
     @event = event
-    mail to: 'salmanshan53@gmail.com', subject: 'New Booking alert'
+    mail to: 'Jacob@dbmekk.no', subject: 'New Booking alert'
   end
   def contact(data)
     @data = data
-    mail to: 'salmanshan53@gmail.com', subject: 'New Message'
+    mail to: 'Jacob@dbmekk.no', subject: 'New Message'
   end
 end
