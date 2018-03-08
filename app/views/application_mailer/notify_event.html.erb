@@ -1,0 +1,11 @@
+<strong>Hello,</strong>
+<p>New Event has been received...</p>
+<strong>Details:</strong>
+<ul>
+  <li><strong>Title:</strong> <%= @event.title %></li>
+  <li><strong>Phone Number:</strong> <%= @event.phone_number %></li>
+  <li><strong>Email:</strong> <%= @event.email %></li>
+  <li><strong>Start:</strong> <%= @event.start&.strftime("%F") %></li>
+  <li><strong>License No:</strong> <%= @event.license_no %></li>
+  <li><strong>Description:</strong> <%= @event.description %></li>
+</ul>

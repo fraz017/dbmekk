@@ -41,6 +41,7 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'faker'
 gem 'jquery-rails'
+gem 'mailgun_rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

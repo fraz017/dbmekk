@@ -8,4 +8,13 @@ ActiveAdmin.register Service do
     column :grand_total
     actions
   end
+
+  form do |f|
+    f.inputs do
+      f.input :name
+      f.input :price
+      f.input :tax
+    end
+    f.actions
+  end
 end
