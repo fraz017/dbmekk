@@ -21,7 +21,10 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @result = true
     # if Event.in_daterange(event_params[:start], event_params[:end]).blank?
-      @event.save
+    if @event.save
+    else
+      render :json => { errors: @event.errors.full_messages }
+    end
     # else
     #   @result = false
     # end

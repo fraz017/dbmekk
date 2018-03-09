@@ -5,6 +5,7 @@ class Event < ApplicationRecord
   validates :license_no, presence: true
   after_create :notify_admin
   has_one :bill
+  accepts_nested_attributes_for :bill, :allow_destroy => true
   attr_accessor :date_range
   scope :in_daterange, ->(start_date, end_date) { where('end > ? and start < ?', start_date, end_date) }
 

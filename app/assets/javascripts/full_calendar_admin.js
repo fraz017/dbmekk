@@ -66,25 +66,13 @@ initialize_calendar = function() {
       }
     },
       select: function(start, end) {
-        if (getEventsByTime( start, end ).length >= 5) {
-          $('.calendar').fullCalendar('unselect');
-          alert("Slots full!");
-          return false;
-        }
-        else if (moment().diff(start, 'days') > 0) {
+        if (moment().diff(start, 'days') > 0) {
           $('.calendar').fullCalendar('unselect');
           alert("Please select current or future dates!");
           return false;
         }
         else{
-          $.getScript('/events/new', function() {
-            // $('#event_date_range').val(moment(start).format("MM/DD/YYYY HH:mm") + ' - ' + moment(end).format("MM/DD/YYYY HH:mm"))
-            // date_range_picker();
-            $('.start_hidden').val(moment(start).format('YYYY-MM-DD HH:mm'));
-            $('.end_hidden').val(moment(end).format('YYYY-MM-DD HH:mm'));
-          });
-
-          calendar.fullCalendar('unselect');
+          window.location.href = "/admin/bookings/new?start="+moment(start).format('YYYY-MM-DD HH:mm')+"&end="+moment(end).format('YYYY-MM-DD HH:mm');
         }
       },
 

@@ -74,12 +74,11 @@ ActiveRecord::Schema.define(version: 20180227081128) do
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.float "price", limit: 24
-    t.bigint "bill_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "grand_total", limit: 24
     t.float "tax", limit: 24, default: 25.0
-    t.index ["bill_id"], name: "index_items_on_bill_id"
+    t.integer "bill_id"
   end
 
   create_table "services", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
