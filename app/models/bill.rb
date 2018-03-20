@@ -7,6 +7,10 @@ class Bill < ApplicationRecord
   accepts_nested_attributes_for :items, :allow_destroy => true
   after_save :change_price
 
+  def bill_number
+    "DBM-" + self.id.to_s.rjust(6, '0')
+  end
+
   def sub_total
     items.sum(:price) + services.sum(:price)
   end
