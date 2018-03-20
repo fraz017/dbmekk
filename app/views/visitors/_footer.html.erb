@@ -1,0 +1,30 @@
+<div class="containr footerContent">
+  <table class="end-bill">
+    <tbody>
+      <tr>
+        <td width="774" align="right">Bankkonto</td>
+        <td width="250" align="right"><%= @bill.bank_account %></td>
+      </tr>
+      <tr>
+        <td width="774" align="right">Betalningsmetod</td>
+        <td width="250" align="right"><%= @bill.payment_method %></td>
+      </tr>
+      <tr>
+        <td width="774" align="right">Netto</td>
+        <td width="250" align="right"><%= @bill.price %></td>
+      </tr>
+      <tr>
+        <td width="774" align="right">Mva</td>
+        <td width="250" align="right"><%= @bill.tax %></td>
+      </tr>
+      <tr style="font-size:26px;font-weight:500;">
+        <td width="774" align="right">A betale</td>
+        <td width="250" align="right"><%= @bill.grand_total.round(2) %></td>
+      </tr>
+      <tr style="font-weight:500;">
+        <td width="774" align="right"></td>
+        <td width="250" align="right">Alle belop er oppgitt i NOK</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

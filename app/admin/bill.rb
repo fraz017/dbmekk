@@ -1,15 +1,7 @@
 ActiveAdmin.register Bill do
 
   form do |f|
-    f.inputs do
-      f.input :event, selected: params[:event_id] || f.object.try(:event).try(:id), :input_html => { :readonly => true }
-      f.input :services, as: :check_boxes
-      f.has_many :items, heading: 'Others', allow_destroy: true do |a|
-        a.input :name
-        a.input :price
-      end
-    end
-    f.actions
+    render partial: "form", locals: { f: f}
   end
 
   index do
@@ -26,7 +18,7 @@ ActiveAdmin.register Bill do
     
     def create
       super do |format|
-        redirect_to "/generate_bill/#{@bill.id}" and return
+        redirect_to "/generate_bill/#{@bill.id}.pdf" and return
       end
     end 
   end

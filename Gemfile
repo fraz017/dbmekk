@@ -42,6 +42,8 @@ gem 'simple_form'
 gem 'faker'
 gem 'jquery-rails'
 gem 'mailgun_rails'
+gem 'wicked_pdf', github: 'mileszs/wicked_pdf'
+gem 'wkhtmltopdf-binary'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

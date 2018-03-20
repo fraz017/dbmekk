@@ -92,10 +92,7 @@ initialize_calendar = function() {
       },
       
       eventClick: function(event, jsEvent, view) {
-        console.log(event);
-        $('#modalTitle').html(event.title);
-        $('#modalBody').html(event.description);
-        $('#fullCalModal').modal();
+        window.location.href = '/admin/bookings/'+ event.id +'/edit';
       }
     });
   })

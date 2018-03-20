@@ -3,7 +3,7 @@
     <tbody>
       <tr>
         <td width="213">
-          <img src="/assets/logo.png" alt="DB-MEKK">
+          <%= wicked_pdf_image_tag "logo.png" %>
         </td>
         <td class="pull-left epost">
           <p>Epost <span class="e1">jacob@dbmekk.no</span></p>
@@ -60,63 +60,38 @@
     </tbody>
   </table>
 </div>
-<div class="containr-btm">
+<% data = @bill.services + @bill.items %>
+<% data.each_slice(25).with_index do |d, i| %>
+<div class="containr-btm" style="<%= i == 0 ? 'min-height: 880px;' : 'min-height: 1300px;' %>">
   <table class="table table-striped">
     <thead>
       <tr>
         <th>Beskrivelse</th>
         <th>Enhetspris</th>
         <th>Antall</th>
-        <th>Mva</th>
+        <th>Mva (%)</th>
         <th>Sum</th>
+        <th>Discount (%)</th>
       </tr>
     </thead>
     <tbody>
-      <% @bill.services.each do |b| %>
+      <% d.each do |b| %>
         <tr>
           <td><%= b.name %></td>
           <td><%= b.price %></td>
           <td>1</td>
-          <td>25%</td>
-          <td><%= b.grand_total %></td>
-        </tr>
-      <% end %>
-      <% @bill.items.each do |b| %>
-        <tr>
-          <td><%= b.name %></td>
-          <td><%= b.price %></td>
-          <td>1</td>
-          <td>25%</td>
-          <td><%= b.grand_total %></td>
+          <td>25</td>
+          <td><%= b.grand_total.round(2) %></td>
+          <td><%=
+            begin
+              BillsService.where(bill_id: @bill.id, service_id: b.id).first.discount
+            rescue
+              "0"
+            end
+            %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
-<div class="containr">
-  <table class="end-bill">
-    <tbody>
-      <tr>
-        <td width="774" align="right">Netto</td>
-        <td width="250" align="right"><%= @bill.price %></td>
-      </tr>
-      <tr>
-        <td width="774" align="right">Mva</td>
-        <td width="250" align="right"><%= @bill.tax %></td>
-      </tr>
-      <tr style="font-size:26px;font-weight:500;">
-        <td width="774" align="right">A betale</td>
-        <td width="250" align="right"><%= @bill.grand_total %></td>
-      </tr>
-      <tr style="font-weight:500;">
-        <td width="774" align="right"></td>
-        <td width="250" align="right">Alle belop er oppgitt i NOK</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<script type="text/javascript">
-  $(window).on("load",function () {
-    window.print();
-  });
-</script>
+<% end %>

@@ -1,3 +1,4 @@
+    <a id="myBtn" href="/schedule" class="btn btn-important-xl">Book Now</a>
     <div id="page-content">
         <!-- Slider -->
         <div id="slider-home" class="carousel slide text-center" data-ride="carousel">
@@ -731,3 +732,22 @@
         
     </div>
 </div>
+<script type="text/javascript">
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          document.getElementById("myBtn").style.display = "block";
+      } else {
+          document.getElementById("myBtn").style.display = "none";
+      }
+  }
+</script>
+<style type="text/css">
+  #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+} 
+</style>

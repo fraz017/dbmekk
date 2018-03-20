@@ -1,11 +1,12 @@
-<strong>Hello,</strong>
-<p>New Booking has been received...</p>
+<strong>Hello, <%= @event.email %></strong>
+<p>Booking time updated</p>
 <strong>Details:</strong>
 <ul>
   <li><strong>Title:</strong> <%= @event.title %></li>
   <li><strong>Phone Number:</strong> <%= @event.phone_number %></li>
   <li><strong>Email:</strong> <%= @event.email %></li>
   <li><strong>Booking Date:</strong> <%= @event.start&.strftime("%F") %></li>
+  <li><strong>Booking Time:</strong> <%= @event.booking_time&.strftime("%I:%M %P") %></li>
   <li><strong>License No:</strong> <%= @event.license_no %></li>
   <li><strong>Description:</strong> <%= @event.description %></li>
 </ul>

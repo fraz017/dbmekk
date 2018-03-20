@@ -1,8 +1,9 @@
 class Bill < ApplicationRecord
   belongs_to :event, optional: true
-  has_and_belongs_to_many :services, optional: true
+  has_many :bills_services, :dependent => :destroy
+  has_many :services, through: :bills_services
   has_many :items
-  accepts_nested_attributes_for :services, :allow_destroy => true
+  accepts_nested_attributes_for :bills_services, :allow_destroy => true
   accepts_nested_attributes_for :items, :allow_destroy => true
   after_save :change_price
 

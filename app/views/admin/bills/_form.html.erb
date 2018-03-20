@@ -1,0 +1,17 @@
+<%= semantic_form_for [:admin, @bill], builder: ActiveAdmin::FormBuilder do |f| %>
+  <%= f.inputs "Details" do %>
+    <%= f.input :event, selected: params[:event_id] || f.object.try(:event).try(:id), :input_html => { :readonly => true } %>
+    <%= f.input :bank_account %>
+    <%= f.input :payment_method, as: :select, collection: [["Bank"],["Cash"],["Cheque"],["Email"],["Credit Card"]], include_blank: false %>
+    <% f.has_many :bills_services, heading: 'Services', allow_destroy: true do |a|
+        a.input :service, as: :select, collection: Service.all.map{|s| [s.name, s.id]}
+        a.input :discount
+      end %>
+    <% f.has_many :items, heading: 'Others', allow_destroy: true do |a|
+        a.input :name
+        a.input :price
+      end %>
+
+    <%= f.actions %>
+  <% end %>  
+<% end %>
