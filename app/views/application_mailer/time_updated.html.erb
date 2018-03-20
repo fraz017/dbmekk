@@ -1,5 +1,5 @@
 <strong>Hello, <%= @event.email %></strong>
-<p>Booking time updated</p>
+<p>Your booking has been confirmed at dbmekk on <%= @event.start&.strftime("%F") %> on <%= @event.booking_time&.strftime("%I:%M %P") %>. Please find the details below</p>
 <strong>Details:</strong>
 <ul>
   <li><strong>Title:</strong> <%= @event.title %></li>
@@ -10,3 +10,5 @@
   <li><strong>License No:</strong> <%= @event.license_no %></li>
   <li><strong>Description:</strong> <%= @event.description %></li>
 </ul>
+<p>Thanks,</p>
+<p>Team DBMekk</p>
