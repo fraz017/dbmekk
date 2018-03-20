@@ -1,3 +1,5 @@
-WICKED_PDF = {
-    :exe_path => '/usr/bin/wkhtmltopdf'#should be whatever your version is called
-}
+if Rails.env.production?
+  WickedPdf.config = {
+    exe_path: "#{ENV['GEM_HOME']}/gems/wkhtmltopdf-binary-#{Gem.loaded_specs['wkhtmltopdf-binary'].version}/bin/wkhtmltopdf_linux_amd64"
+  }
+end

@@ -23,7 +23,7 @@
       <tr>
         <th ><p>Til</p></th>
         <th ><p>Fra</p></th>
-        <th ><p>Faktura<span class="pull-right">#<%= @bill.id %></span></p></th>
+        <th ><p>Faktura<span class="pull-right">#<%= @bill.bill_number %></span></p></th>
       </tr>
     </thead>
     <tbody class="Demokunde">
@@ -35,12 +35,21 @@
       <tr>
         <td width="341.33" class="pull-left"><%= @bill.event.try(:license_no) %></td>
         <td width="341.33">Testveien 1</td>
-        <td class="tdcolor" width="330"><b>Kontonr</b> <span class="pull-right"><%= @bill.event.try(:license_no) %></span></td>
+        <% if @bill.payment_method == ("Bank" || "Email" ) %>
+          <td class="tdcolor" width="330"><b>Kontonr</b> <span class="pull-right">XXXXX-XXXXXX</span></td>
+        <%end%>
       </tr>
       <tr>
         <td width="341.33" class="pull-left"><%= @bill.event.try(:email) %></td>
         <td width="341.33" class="pull-left">0123 OSLO</td>
         <td class="tdcolor" width="330"><b>A betale</b> <span class="pull-right"><%= @bill.grand_total %></span></td>
+      </tr>
+      <tr>
+        <td width="341.33" > </td>
+        <td width="341.33" > </td>
+        <% if @bill.payment_method == ("Bank" || "Email" ) %>
+          <td colspan="2" class="tdcolor" width="330"><b>KID</b> <span class="pull-right">#<%= @bill.bill_number %></span></td>
+        <%end%>
       </tr>
       <tr>
         <td width="341.33" > </td>
@@ -84,7 +93,8 @@
           <td><%= b.grand_total.round(2) %></td>
           <td><%=
             begin
-              BillsService.where(bill_id: @bill.id, service_id: b.id).first.discount
+              discount = BillsService.where(bill_id: @bill.id, service_id: b.id).first.discount
+              discount.present? ? discount : "0" 
             rescue
               "0"
             end

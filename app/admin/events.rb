@@ -75,15 +75,15 @@ ActiveAdmin.register Event, as: "Bookings" do
       if params[:action] == "edit"
         @event = Event.find_by(id: params[:id])
         if @event.bill.present?
-          li class: "cancel" do
+          div class: "col-md-2" do
             link_to "View Bill", "/generate_bill/#{@event.bill.id}.pdf", class: "btn btn-primary"
           end
-          li do
-            link_to "Edit Bill", "/admin/bills/#{@event.bill.id}/edit"
+          div class: "col-md-2" do
+            link_to "Edit Bill", "/admin/bills/#{@event.bill.id}/edit", class: "btn btn-primary"
           end
         else
-          li do
-            link_to "Generate Bill", new_admin_bill_path({event_id: @event.id})
+          div do
+            link_to "Generate Bill", new_admin_bill_path({event_id: @event.id}), class: "btn btn-primary"
           end
         end
       end

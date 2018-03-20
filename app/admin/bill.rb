@@ -4,6 +4,12 @@ ActiveAdmin.register Bill do
     render partial: "form", locals: { f: f}
   end
 
+  action_item :view, only: :show do
+    if bill.present?
+      link_to "View Bill PDF", "/generate_bill/#{bill.id}.pdf"
+    end
+  end
+
   index do
     selectable_column 
     column :id
