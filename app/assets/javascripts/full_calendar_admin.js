@@ -4,10 +4,11 @@ initialize_calendar = function() {
     var calendar = $(this);
     calendar.fullCalendar({
       header: {
-        left: 'prev,next today',
+        left: 'next,prev, today',
         center: 'title',
         right: ''
       },
+      height: 700,
       handleWindowResize: true,
       weekends: false,
       defaultView: 'month',

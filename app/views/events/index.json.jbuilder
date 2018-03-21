@@ -4,7 +4,7 @@ json.array! @events do |event|
   json.title event&.title
   json.description event&.description
   json.license_no event&.license_no
-  json.booking_time event&.booking_time&.strftime("%I:%M %P")
+  json.booking_time event&.booking_time&.strftime("%I:%M %P").present? ? event&.booking_time&.strftime("%I:%M %P") : "N/A"
   json.start event&.start&.strftime(date_format)
   json.end event&.end&.strftime(date_format)
   json.allDay event.all_day_event? ? true : false

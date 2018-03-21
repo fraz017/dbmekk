@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
   validates :title, presence: true
-  validates :email, presence: true
+  # validates :email, presence: true
   validates :phone_number, presence: true
   validates :license_no, presence: true
   after_create :notify_admin
