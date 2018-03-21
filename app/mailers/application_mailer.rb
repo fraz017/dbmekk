@@ -1,18 +1,20 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'no-reply@dbmekk.no'
+  default from: 'DBMekk<no-reply@dbmekk.no>'
   layout 'mailer'
 
   def notify_event(event)
     @event = event
-    mail to: 'Jacob@dbmekk.no', subject: 'New Booking alert'
+    mail to: 'post@dbmekk.no', subject: 'New Booking alert'
   end
+
   def time_updated(event)
     @event = event
-    mail to: @event.email, subject: 'Booking time updated'
+    mail to: @event.email, subject: 'Booking Confirmed'
   end
+
   def contact(data)
     @data = data
-    mail to: 'Jacob@dbmekk.no', subject: 'New Message'
+    mail to: 'post@dbmekk.no', subject: 'New Message'
   end
   def email_invoice(bill)
     @bill = bill
