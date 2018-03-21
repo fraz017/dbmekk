@@ -99,7 +99,7 @@ Rails.application.configure do
     :address => "smtp.domeneshop.no",
     :port => 587,
     :domain => "dbmekk.no",
-    :user_name => "post@dbmekk.no",
+    :user_name => "dbmekk5",
     :password => "Blirik24",
     :enable_starttls_auto => true,
   }
