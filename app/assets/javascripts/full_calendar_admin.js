@@ -39,31 +39,7 @@ initialize_calendar = function() {
         }
       },
     eventRender: function(event, element) {
-      element.popover({
-          animation:true,
-          delay: 300,
-          content: event.license_no,
-          trigger: 'hover',
-          placement: 'top'
-      });
-      var ntoday = new Date().getTime();
-      var eventEnd = moment( event.end ).valueOf();
-      var eventStart = moment( event.start ).valueOf();
-      if (!event.end){
-        if (eventStart < ntoday){
-          element.addClass("past-event");
-          element.children().addClass("past-event");
-        }
-      } else {
-        if (eventEnd < ntoday){
-          element.addClass("past-event");
-          element.children().addClass("past-event");
-        }
-      }
-      if ( event.allDay === true ) {
-        element.addClass("allday-event");
-        element.children().addClass("allday-event");
-      }
+      element.find('.fc-title').css("font-size", "12px").append(' - <span style="font-size: 12px">'+event.license_no+'</span> (<span style="font-size: 12px">'+event.booking_time+'</span>)');
     },
       select: function(start, end) {
         if (moment().diff(start, 'days') > 0) {

@@ -35,31 +35,31 @@
       <tr>
         <td width="341.33" class="pull-left"><%= @bill.event.try(:license_no) %></td>
         <td width="341.33">Testveien 1</td>
-        <% if @bill.payment_method == ("Bank" || "Email" ) %>
-          <td class="tdcolor" width="330"><b>Kontonr</b> <span class="pull-right">XXXXX-XXXXXX</span></td>
-        <%end%>
+        <td class="tdcolor" width="330"><b>A betale</b> <span class="pull-right"><%= @bill.grand_total %></span></td>
       </tr>
       <tr>
         <td width="341.33" class="pull-left"><%= @bill.event.try(:email) %></td>
         <td width="341.33" class="pull-left">0123 OSLO</td>
-        <td class="tdcolor" width="330"><b>A betale</b> <span class="pull-right"><%= @bill.grand_total %></span></td>
-      </tr>
-      <tr>
-        <td width="341.33" > </td>
-        <td width="341.33" > </td>
-        <% if @bill.payment_method == ("Bank" || "Email" ) %>
-          <td colspan="2" class="tdcolor" width="330"><b>KID</b> <span class="pull-right">#<%= @bill.bill_number %></span></td>
-        <%end%>
-      </tr>
-      <tr>
-        <td width="341.33" > </td>
-        <td width="341.33" > </td>
         <td width="341.33">Dato <span class="pull-right" style="padding-right:10px;"><%= Date.today.strftime("%F") %></span></td>
       </tr>
       <tr>
         <td width="341.33" > </td>
         <td width="341.33" > </td>
         <td width="341.33">Kundenr <span class="pull-right" style="padding-right:10px;"><%= @bill.grand_total %></span></td>
+      </tr>
+      <tr>
+        <td width="341.33" > </td>
+        <td width="341.33" > </td>
+        <% if @bill.payment_method == "Bank" || @bill.payment_method == "Email" %>
+          <td class="tdcolor" width="330"><b>Kontonr</b> <span class="pull-right">XXXXX-XXXXXX</span></td>
+        <%end%>
+      </tr>
+      <tr>
+        <td width="341.33" > </td>
+        <td width="341.33" > </td>
+        <% if @bill.payment_method == "Bank" || @bill.payment_method == "Email" %>
+          <td colspan="2" class="tdcolor" width="330"><b>KID</b> <span class="pull-right">#<%= @bill.bill_number %></span></td>
+        <%end%>
       </tr>
       <tr>
         <td width="341.33" > </td>
@@ -71,7 +71,7 @@
 </div>
 <% data = @bill.services + @bill.items %>
 <% data.each_slice(25).with_index do |d, i| %>
-<div class="containr-btm" style="<%= i == 0 ? 'min-height: 880px;' : 'min-height: 1300px;' %>">
+<div class="containr-btm" style="<%= i == 0 ? 'min-height: 870px;' : 'min-height: 1300px;' %>">
   <table class="table table-striped">
     <thead>
       <tr>

@@ -1,4 +1,5 @@
 ActiveAdmin.register Service do
+  menu priority: 4
   index do
     selectable_column 
     column :id

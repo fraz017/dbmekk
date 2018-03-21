@@ -1,5 +1,6 @@
 ActiveAdmin.register Event, as: "Bookings" do
 # See permitted parameters documentation:
+menu priority: 2
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
 # permit_params :list, :of, :attributes, :on, :model

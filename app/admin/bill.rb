@@ -1,5 +1,5 @@
 ActiveAdmin.register Bill do
-
+  menu priority: 3
   form do |f|
     render partial: "form", locals: { f: f}
   end

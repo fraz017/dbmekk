@@ -1,0 +1,20 @@
+<% f.has_many :bills_services, heading: 'Services', allow_destroy: true do |a|
+    a.input :service, as: :select, collection: Service.all.map{|s| [s.name + " - " + s.price.to_s, s.id]}, :input_html => { class: "service" } %>
+  <li class="select input required"><label>After Discount Price</label><span class="calculate"><%= a.object&.service&.price %></span></li>
+<%  a.input :discount, :input_html => { class: "discount", id: "#{a.object&.service&.price}" }, label: "Discount (%)"
+  end %>
+<script type="text/javascript">
+    $(document).on('change', '.service', function(){
+      var regex = /[+-]?\d+(\.\d+)?/g;
+      var price = $(this).children("option").filter(":selected").text();
+      var ints = price.match(regex).map(function(v) { return parseFloat(v); });
+      $(this).parent().parent().find(".discount").attr("id", ints[0]);
+      $(this).parent().parent().find(".discount").val(0);
+      $(this).parent().parent().find(".calculate").html(ints[0]);
+    });
+    $(document).on('keyup', '.discount', function(){
+      var value = $(this).val();
+      var price = $(this).attr("id");
+      $(this).parent().parent().find(".calculate").html(price-(price*(value/100.0)));
+    });
+</script>

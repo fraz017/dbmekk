@@ -26,5 +26,8 @@ class Bill < ApplicationRecord
   private
   def change_price
     self.update_columns(tax: cal_tax, price: sub_total, grand_total: grand_total)
+    if self.payment_method == "Email"
+      ApplicationMailer.email_invoice(self).deliver_now
+    end
   end
 end

@@ -3,15 +3,11 @@
     <%= f.input :event, selected: params[:event_id] || f.object.try(:event).try(:id), :input_html => { :readonly => true } %>
     <%= f.input :bank_account %>
     <%= f.input :payment_method, as: :select, collection: [["Bank"],["Cash"],["Cheque"],["Email"],["Credit Card"]], include_blank: false %>
-    <% f.has_many :bills_services, heading: 'Services', allow_destroy: true do |a|
-        a.input :service, as: :select, collection: Service.all.map{|s| [s.name, s.id]}
-        a.input :discount
-      end %>
+    <%= render partial: "nested", locals: { f: f } %>
     <% f.has_many :items, heading: 'Others', allow_destroy: true do |a|
         a.input :name
         a.input :price
-      end %>
-
+      end %>  
     <%= f.actions %>
   <% end %>  
 <% end %>
