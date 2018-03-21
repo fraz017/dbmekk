@@ -2,7 +2,7 @@
 Mailjet.configure do |config|
   config.api_key = 'ea5e9e86c55b77834aa023cf0dd1ca3f'
   config.secret_key = 'a415ba7c4c04d8b09fffe5e132aff1cf'
-  config.default_from = 'post@dbmekk.no'
+  config.default_from = 'no-reply@dbmekk.no'
   # Mailjet API v3.1 is at the moment limited to Send API.
   # We’ve not set the version to it directly since there is no other endpoint in that version.
   # We recommend you create a dedicated instance of the wrapper set with it to send your emails.
