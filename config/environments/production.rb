@@ -104,13 +104,13 @@ Rails.application.configure do
   #   :enable_starttls_auto => true,
   # }
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :authentication => :plain,
-    :address => "smtp.mailgun.org",
-    :port => 587,
-    :domain => "dbmekk.no",
-    :user_name => "postmaster@dbmekk.no",
-    :password => "735b2b3d246fe468cc178660f35405fc-2b4c5a6c-712286eb",
-  }
+  config.action_mailer.delivery_method = :mailjet
+  # config.action_mailer.smtp_settings = {
+  #   :authentication => :plain,
+  #   :address => "smtp.mailgun.org",
+  #   :port => 587,
+  #   :domain => "dbmekk.no",
+  #   :user_name => "postmaster@dbmekk.no",
+  #   :password => "735b2b3d246fe468cc178660f35405fc-2b4c5a6c-712286eb",
+  # }
 end
