@@ -79,8 +79,8 @@
         <th>Enhetspris</th>
         <th>Antall</th>
         <th>Mva (%)</th>
-        <th>Sum</th>
         <th>Discount (%)</th>
+        <th>Sum</th>
       </tr>
     </thead>
     <tbody>
@@ -90,7 +90,6 @@
           <td><%= b.price %></td>
           <td>1</td>
           <td>25</td>
-          <td><%= b.grand_total.round(2) %></td>
           <td><%=
             begin
               discount = BillsService.where(bill_id: @bill.id, service_id: b.id).first.discount
@@ -99,6 +98,7 @@
               "0"
             end
             %></td>
+          <td><%= b.grand_total.round(2) %></td>
         </tr>
       <% end %>
     </tbody>
