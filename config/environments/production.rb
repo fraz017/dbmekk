@@ -95,7 +95,7 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :authentication => :login,
+    :authentication => :plain,
     :address => "smtp.domeneshop.no",
     :port => 587,
     :domain => "dbmekk.no",
