@@ -75,11 +75,6 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-  # config.action_mailer.delivery_method = :mailgun
-  # config.action_mailer.mailgun_settings = {
-  #   api_key: 'key-0fcf7ece2273a386075647e70d6856be',
-  #   domain: 'sandbox67cf5c2da4eb43b3b46ac3eb5963efaa.mailgun.org',
-  # }
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
@@ -93,24 +88,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   config.action_mailer.perform_deliveries = true
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #   :authentication => "plain",
-  #   :address => "smtp.domeneshop.no",
-  #   :port => 587,
-  #   :domain => "dbmekk.no",
-  #   :user_name => "dbmekk5",
-  #   :password => "Blirik24",
-  #   :enable_starttls_auto => true,
-  # }
 
   config.action_mailer.delivery_method = :mailjet
-  # config.action_mailer.smtp_settings = {
-  #   :authentication => :plain,
-  #   :address => "smtp.mailgun.org",
-  #   :port => 587,
-  #   :domain => "dbmekk.no",
-  #   :user_name => "postmaster@dbmekk.no",
-  #   :password => "735b2b3d246fe468cc178660f35405fc-2b4c5a6c-712286eb",
-  # }
 end
