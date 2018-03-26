@@ -5,7 +5,7 @@ class Bill < ApplicationRecord
   has_many :items
   accepts_nested_attributes_for :bills_services, :allow_destroy => true
   accepts_nested_attributes_for :items, :allow_destroy => true
-  # after_save :change_price
+  after_save :change_price
 
   def bill_number
     "DBM-" + self.id.to_s.rjust(6, '0')

@@ -22,6 +22,6 @@ class ApplicationMailer < ActionMailer::Base
       render_to_string(:pdf => "invoice", :template => 'visitors/generate_bill.html.erb', :layout => "layouts/bill.html.erb")
     )
     self.instance_variable_set(:@bill, nil)
-    mail :subject => "Your Invoice", :to => "salmanshan53@gmail.com"
+    mail :subject => "Your Invoice", :to => @bill&.event&.email
   end
 end
