@@ -1,33 +1,34 @@
 ActiveAdmin.register Event, as: "Bookings" do
-# See permitted parameters documentation:
-menu priority: 2
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
+  # See permitted parameters documentation:
+  menu priority: 2
+  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
+  #
+  # permit_params :list, :of, :attributes, :on, :model
+  #
   config.clear_action_items!
   action_item :only => :index do
-    link_to "New Booking" , "/admin/dashboard" 
+    link_to "New Booking", "/admin/dashboard"
   end
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if params[:action] == 'create' && current_user.admin?
-#   permitted
-# end
-  controller do
-    def update
-      update! do |format|
-        format.html { redirect_to admin_dashboard_path }
-      end
-    end
-    def create
-      create! do |format|
-        format.html { redirect_to admin_dashboard_path }
-      end
-    end
-  end
+  # or
+  #
+  # permit_params do
+  #   permitted = [:permitted, :attributes]
+  #   permitted << :other if params[:action] == 'create' && current_user.admin?
+  #   permitted
+  # end
+  # controller do
+  #   def update
+  #     update! do |format|
+  #       format.html { redirect_to admin_dashboard_path }
+  #     end
+  #   end
+
+  #   def create
+  #     create! do |format|
+  #       format.html { redirect_to admin_dashboard_path }
+  #     end
+  #   end
+  # end
 
   index do
     selectable_column
@@ -40,9 +41,9 @@ menu priority: 2
       e.booking_time&.strftime("%I:%M %P")
     end
     column :description
-    column :bill do |event| 
+    column :bill do |event|
       if event.bill.present?
-        columns do 
+        columns do
           column do
             link_to "View Bill", "/generate_bill/#{event.bill.id}.pdf", target: "_blank"
           end
@@ -64,8 +65,8 @@ menu priority: 2
       f.input :license_no, placeholder: "AA-55555"
       f.input :phone_number, placeholder: "12345678"
       f.input :booking_time, :as => :time_picker, placeholder: ""
-      f.input :start, :input_html => { :value => f.object.start || params[:start] }, as: :hidden
-      f.input :end, :input_html => { :value => f.object.end || params[:end] }, as: :hidden
+      f.input :start, :input_html => {:value => f.object.start || params[:start]}, as: :hidden
+      f.input :end, :input_html => {:value => f.object.end || params[:end]}, as: :hidden
       f.input :description, placeholder: "Description"
     end
     f.inputs "Services", for: [:bill, f.object.bill || Bill.new] do |meta_form|
