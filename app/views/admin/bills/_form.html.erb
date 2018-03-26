@@ -7,6 +7,7 @@
     <% f.has_many :items, heading: 'Others', allow_destroy: true do |a|
         a.input :name
         a.input :price
+        a.input :discount
       end %>  
     <%= f.actions %>
   <% end %>  

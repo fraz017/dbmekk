@@ -87,7 +87,7 @@
       <% d.each do |b| %>
         <tr>
           <td><%= b.name %></td>
-          <td><%= b.price %></td>
+          <td><%= b.price - (b.price*(b.tax/100.0)) %></td>
           <td>1</td>
           <td>25</td>
           <td><%= b.grand_total.round(2) %></td>

@@ -5,6 +5,9 @@ class Item < ApplicationRecord
   before_save :add_price
 
   def add_price
-    self.grand_total = self.price + (self.price*(self.tax/100.0))
+    self.grand_total = self.price
+    if self.discount.present?
+      self.grand_total = self.price-(self.price*self.discount/100)
+    end
   end
 end
