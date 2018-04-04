@@ -17,3 +17,4 @@ config/initializers/mailjet.rb
 /yarn-error.log
 
 .byebug_history
+config/config.yml
