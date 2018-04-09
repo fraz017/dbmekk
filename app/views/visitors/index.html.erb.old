@@ -1,4 +1,4 @@
-    <a id="myBtn" href="/schedule" class="btn btn-important-xl">Book Now</a>
+<a id="myBtn" href="/schedule" class="btn btn-important-xl">Book Now</a>
     <div id="page-content">
         <!-- Slider -->
         <div id="slider-home" class="carousel slide text-center" data-ride="carousel">
