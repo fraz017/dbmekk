@@ -16,6 +16,7 @@ class ApplicationMailer < ActionMailer::Base
     @data = data
     mail to: 'post@dbmekk.no', subject: 'New Message'
   end
+
   def email_invoice(bill)
     @bill = bill
     attachments['invoice.pdf'] = WickedPdf.new.pdf_from_string(
