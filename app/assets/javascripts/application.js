@@ -22,3 +22,4 @@
 //= require vendor/owl.carousel.min
 //= require main
 //= require mask
+//= require readmore.min
