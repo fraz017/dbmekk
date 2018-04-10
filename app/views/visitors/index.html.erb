@@ -81,7 +81,7 @@
                     </div>
                 </div><!-- /.col-sm-4 -->
                 <div class="col-sm-4 detail">
-                    <img src="/assets/our-principles-details/icon2.png" alt="..." class="text-center">
+                    <img src="/assets/our-principles-details/eu.png" alt="..." class="text-center">
                     <h3>
                         <a href="#">EU Kontroll</a>
                     </h3>
@@ -239,7 +239,7 @@
                     <div class="box box-1">
                         <div class="box-img">
                             <a href="#">
-                                <img src="/assets/services/4.jpg" alt="..." class="img-responsive">
+                                <img src="/assets/services/7.jpg" alt="..." class="img-responsive" style="max-height: 240px; width:100%;">
                             </a>
                             <div class="box-preview">
                                 <a data-toggle="modal" data-target="#myModal-4" class="zoom-wrapper">
@@ -488,6 +488,10 @@
 
     <!-- Contact Us -->
     <div id="contact-us" class="contact-us">
+        <div class="alert alert-success alert-dismissible text-center hidden">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Takk!</strong> for at du har kontaktet oss, meldingen din er sendt.
+        </div>
         <div class="contact-lef-bg-wrapper">
             <div class="container-fluid pad-l-r-0">
                 <div class="col-sm-6 pad-l-r-0">
@@ -547,11 +551,11 @@
                     </div><!-- /.col-sm-6 -->
                     <div class="col-sm-6">
                         <div class="row">
-                            <%= form_tag(contact_path, method: "post", class: "rounded-form", id: "contact-form") do %>  
+                            <%= form_tag(contact_path, method: "post", class: "rounded-form", id: "contact-form", remote: true) do %>  
                                 <div class="col-md-8">
                                     <input id="name" type="text" name="name" placeholder="Navn" class="form-control" required="required">
                                     <input id="email" type="email" name="email" placeholder="e-post" class="form-control" required="required">
-                                    <input id="subject" type="text" name="subject" placeholder="lisens nr" class="form-control" required="required">
+                                    <input id="subject" type="text" name="subject" placeholder="Reg. nummer" class="form-control" required="required">
                                     
                                 </div>
                                 <div class="col-md-12">
@@ -721,7 +725,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-sm-6">
-                            <img src="/assets/services/4.jpg" alt="..." class="img-responsive">
+                            <img src="/assets/services/7.jpg" alt="..." class="img-responsive">
                     </div>
                     <div class="col-sm-6">
                         <p>Justering av hovedlys og tåkelys</p>
