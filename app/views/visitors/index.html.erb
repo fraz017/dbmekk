@@ -121,13 +121,15 @@
                             <li>- Kartlegging av mekaniske feil</li>
                         </ul>
                         <br/>
+                        <hr>
                         <p style="text-align:left;">Liten Service:</p>
                         <ul>
                             <li>- oljeskift</li>
                             <li>- oljefilter</li>
                             <li>- pollenfilter</li>
                         </ul>
-                        <h3 style="text-align:left;">Pris fra kr. 2490/-</h3>
+                        <p style="text-align:left;">Pris fra kr. 2490/-</p>
+                        <hr>
                         <p style="text-align:left;">Stor Service:</p>
                         <ul>
                             <li>- olje</li>
@@ -137,7 +139,7 @@
                             <li>- luftfilter</li>                            
                             <li>- bremsevæske</li>                            
                         </ul>
-                        <h3 style="text-align:left;">Pris fra kr. 4990/-</h3>
+                        <p style="text-align:left;">Pris fra kr. 4990/-</p>
                     </div>
                 </div><!-- /.col-sm-4 -->
             </div><!-- /.row -->
@@ -284,7 +286,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                    <h2>VI ER HER FOR DEG</h2>
+                    <h2 class="text-center" style="padding-top:20px;"><span style="vertical-align:middle;">VI ER HER FOR DEG</span></h2>
                 </div><!-- /.col-ms-9 -->
                 <div class="col-md-3">
                     <a href="#contact-us" class="btn btn-important-lg">Kontakt Oss</a>
@@ -812,6 +814,9 @@
           document.getElementById("myBtn").style.display = "none";
       }
   }
+  $(document).ready(function(){
+    $("#subject").mask('AA-00000');
+  });
 </script>
 <style type="text/css">
   #myBtn {
