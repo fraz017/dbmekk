@@ -18,6 +18,7 @@ initialize_calendar = function() {
       events: '/events.json',
       editable: false,
       eventLimitText: "Something",
+      locale: 'nb',
       viewRender: function(currentView){
         var minDate = moment(),
         maxDate = moment().add(3,'weeks');

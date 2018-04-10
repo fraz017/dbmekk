@@ -17,6 +17,7 @@ initialize_calendar = function() {
       events: '/events.json',
       editable: false,
       eventLimitText: "Something",
+      locale: 'nb',
       viewRender: function(currentView){
         var minDate = moment(),
         maxDate = moment().add(3,'weeks');
@@ -40,12 +41,13 @@ initialize_calendar = function() {
       },
     eventRender: function(event, element) {
       element.popover({
-          animation:true,
-          delay: 300,
-          content: event.license_no,
-          trigger: 'hover',
-          placement: 'top'
+        animation:true,
+        delay: 300,
+        content: "bestilt",
+        trigger: 'hover',
+        placement: 'top'
       });
+      element.find('.fc-title').html("bestilt");
       var ntoday = new Date().getTime();
       var eventEnd = moment( event.end ).valueOf();
       var eventStart = moment( event.start ).valueOf();
@@ -73,7 +75,6 @@ initialize_calendar = function() {
         }
         else if (moment().diff(start, 'days') > 0) {
           $('.calendar').fullCalendar('unselect');
-          alert("Please select current or future dates!");
           return false;
         }
         else{
@@ -104,10 +105,7 @@ initialize_calendar = function() {
       },
       
       eventClick: function(event, jsEvent, view) {
-        console.log(event);
-        $('#modalTitle').html(event.title);
-        $('#modalBody').html(event.description);
-        $('#fullCalModal').modal();
+        
       }
     });
   })

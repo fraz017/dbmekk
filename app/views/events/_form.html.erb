@@ -1,16 +1,16 @@
 <%= form_for @event, html: {class: "rounded-form", id: "contact-form"}, remote: true do |f| %>
   <div class="form-inputs">
-    <%= f.text_field :title, class: "form-control", required: true, placeholder: "Title" %>
-    <%= f.email_field :email, class: "form-control", required: true, placeholder: "Email Address" %>
-    <%= f.text_field :phone_number, class: "form-control", required: true, placeholder: "Phone: 12345678" %>
-    <%= f.text_field :license_no, class: "form-control", required: true, placeholder: "License: AA-55555" %>
-    <%= f.text_area :description, class: "form-control", placeholder: "Description" %>
+    <%= f.text_field :title, class: "form-control", required: true, placeholder: "Tittel" %>
+    <%= f.email_field :email, class: "form-control", required: true, placeholder: "e-post" %>
+    <%= f.text_field :phone_number, class: "form-control", required: true, placeholder: "Tlf: 12345678" %>
+    <%= f.text_field :license_no, class: "form-control", required: true, placeholder: "Lisensnr.: AA-55555" %>
+    <%= f.text_area :description, class: "form-control", placeholder: "Beskrivelse" %>
     <%= f.hidden_field :start, as: :hidden, value: Date.today, class: 'input-sm start_hidden' %>
     <%= f.hidden_field :end, as: :hidden, value: Date.today, class: 'input-sm end_hidden' %>
   </div>
   <br/>
   <div class="form-actions">
-    <%= f.button :submit, class: "btn btn-important-xl" %>
+    <%= f.button "sende inn", class: "btn btn-important-xl" %>
   </div>
 <% end %>
 <script type="text/javascript">

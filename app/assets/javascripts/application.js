@@ -17,6 +17,7 @@
 //= require jquery.qtip.min
 //= require moment
 //= require fullcalendar
+//= require nb
 //= require full_calendar
 //= require vendor/gmaps.min
 //= require vendor/owl.carousel.min
