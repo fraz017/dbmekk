@@ -20,7 +20,7 @@ initialize_calendar = function() {
       locale: 'nb',
       viewRender: function(currentView){
         var minDate = moment(),
-        maxDate = moment().add(3,'weeks');
+        maxDate = moment().add(10,'weeks');
         // Past
         if (minDate >= currentView.start && minDate <= currentView.end) {
           $(".fc-prev-button").prop('disabled', true); 

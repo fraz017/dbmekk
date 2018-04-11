@@ -12,7 +12,7 @@
                 <img src="/assets/slider/homepage/2.jpg" alt="...">
                 <div class="carousel-caption">
                     <h1 class="slider-title">
-                        We take care of your car
+                        Velkommen til <span>Din Bilmekaniker AS</span>
                     </h1>
                 </div>
             </div><!-- /.item -->
@@ -60,7 +60,7 @@
                 <div class="col-sm-4 detail">
                     <img src="/assets/our-principles-details/icon1.png" alt="..." class="text-center">
                     <h3>
-                        <a href="#">Hjulstillingskontroll</a>
+                        <a id="ico-1" href="javscript:void(0)">Hjulstillingskontroll</a>
                     </h3>
                     <div id="detail-1">
                         <p>
@@ -83,7 +83,7 @@
                 <div class="col-sm-4 detail">
                     <img src="/assets/our-principles-details/eu.png" alt="..." class="text-center">
                     <h3>
-                        <a href="#">EU Kontroll</a>
+                        <a id="ico-2" href="javscript:void(0)">EU Kontroll</a>
                     </h3>
                     <div id="detail-2">
                         <p>
@@ -107,10 +107,10 @@
                 <div class="col-sm-4 detail">
                     <img src="/assets/our-principles-details/icon3.png" alt="..." class="text-center">
                     <h3>
-                        <a href="#">Service</a>
+                        <a id="ico-3" href="javascript:void(0)">Service</a>
                     </h3>
                     <div id="detail-3">
-                        <p>Vi utfører servicese på alle personbiler.</p>
+                        <p>Vi utfører service på alle personbiler.</p>
                         <p>Vi sjekker følgende punkter</p>
                         <ul>
                             <li>- Bremser</li>
@@ -790,22 +790,22 @@
 <script type="text/javascript">
     $('#detail-1').readmore({
         speed: 500,
-        lessLink: '<a href="#" class="btn btn-default-sm-sm">Read Less</a>',    
-        moreLink: '<a href="#" class="btn btn-default-sm-sm">Read More</a>',
+        lessLink: '<a href="#" class="btn btn-default-sm-sm div-1">les mindre</a>',    
+        moreLink: '<a href="#" class="btn btn-default-sm-sm div-1">Les mer</a>',
         collapsedHeight: 100
     });
 
     $('#detail-2').readmore({
         speed: 500,
-        lessLink: '<a href="#" class="btn btn-default-sm-sm">Read Less</a>',    
-        moreLink: '<a href="#" class="btn btn-default-sm-sm">Read More</a>',
+        lessLink: '<a href="#" class="btn btn-default-sm-sm div-2">les mindre</a>',    
+        moreLink: '<a href="#" class="btn btn-default-sm-sm div-2">Les mer</a>',
         collapsedHeight: 110
     });
 
     $('#detail-3').readmore({
         speed: 500,
-        lessLink: '<a href="#" class="btn btn-default-sm-sm">Read Less</a>',    
-        moreLink: '<a href="#" class="btn btn-default-sm-sm">Read More</a>',
+        lessLink: '<a href="#" class="btn btn-default-sm-sm div-3">les mindre</a>',    
+        moreLink: '<a href="#" class="btn btn-default-sm-sm div-3">Les mer</a>',
         collapsedHeight: 100
     });
 
@@ -820,6 +820,18 @@
   }
   $(document).ready(function(){
     $("#subject").mask('AA-00000');
+    $("#ico-1").click(function(e){
+        e.preventDefault();
+        $(".div-1").click();
+    })
+    $("#ico-2").click(function(e){
+        e.preventDefault();
+        $(".div-2").click();
+    })
+    $("#ico-3").click(function(e){
+        e.preventDefault();
+        $(".div-3").click();
+    })
   });
 </script>
 <style type="text/css">

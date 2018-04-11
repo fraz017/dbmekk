@@ -1,6 +1,6 @@
 <%= form_for @event, html: {class: "rounded-form", id: "contact-form"}, remote: true do |f| %>
   <div class="form-inputs">
-    <%= f.text_field :title, class: "form-control", required: true, placeholder: "Tittel" %>
+    <%= f.text_field :title, class: "form-control", required: true, placeholder: "Navn" %>
     <%= f.email_field :email, class: "form-control", required: true, placeholder: "e-post" %>
     <%= f.text_field :phone_number, class: "form-control", required: true, placeholder: "Tlf: 12345678" %>
     <%= f.text_field :license_no, class: "form-control", required: true, placeholder: "Reg. nummer: AA-55555" %>
