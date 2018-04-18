@@ -48,7 +48,6 @@ ActiveAdmin.register Event, as: "Bookings" do
     column :booking_time do |e|
       e.booking_time&.strftime("%I:%M %P")
     end
-    column :description
     column :bill do |event|
       if event.bill.present?
         columns do
