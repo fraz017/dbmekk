@@ -96,7 +96,7 @@
             <td><%=
               begin
                 discount = BillsService.where(bill_id: @bill.id, service_id: b.id).first
-                discount.present? ? discount.discount : "0" 
+                (discount.present? && discount.discount.present?) ? discount.discount : "-" 
               rescue
                 "0"
               end
