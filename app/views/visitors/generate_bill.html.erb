@@ -35,7 +35,7 @@
       <tr>
         <td width="341.33" class="pull-left"><%= @bill.event.try(:license_no) %></td>
         <td width="341.33">Testveien 1</td>
-        <td class="tdcolor" width="330"><b>A betale</b> <span class="pull-right"><%= @bill.grand_total %></span></td>
+        <td class="tdcolor" width="330"><b>A betale</b> <span class="pull-right"><%= @bill.grand_total.round(2) %></span></td>
       </tr>
       <tr>
         <td width="341.33" class="pull-left"><%= @bill.event.try(:email) %></td>
@@ -45,7 +45,7 @@
       <tr>
         <td width="341.33" > </td>
         <td width="341.33" > </td>
-        <td width="341.33">Kundenr <span class="pull-right" style="padding-right:10px;"><%= @bill.grand_total %></span></td>
+        <td width="341.33">Kundenr <span class="pull-right" style="padding-right:10px;"><%= @bill.grand_total.round(2) %></span></td>
       </tr>
       <tr>
         <td width="341.33" > </td>
@@ -58,7 +58,7 @@
         <td width="341.33" > </td>
         <td width="341.33" > </td>
         <% if @bill.payment_method == "Bank" || @bill.payment_method == "Email" %>
-          <td colspan="2" class="tdcolor" width="330"><b>KID</b> <span class="pull-right">#<%= @bill.bill_number %></span></td>
+          <td colspan="2" class="tdcolor" width="330"><b>KID</b> <span class="pull-right"><%= @bill.bill_number %></span></td>
         <%end%>
       </tr>
       <tr>
@@ -76,8 +76,9 @@
     <thead>
       <tr>
         <th>Beskrivelse</th>
-        <th>Enhetspris</th>
+        <th>Netto</th>
         <th>Antall</th>
+        <th>Enhetspris</th>
         <th>Mva (%)</th>
         <th>Discount (%)</th>
         <th>Sum</th>
@@ -85,21 +86,40 @@
     </thead>
     <tbody>
       <% d.each do |b| %>
-        <tr>
-          <td><%= b.name %></td>
-          <td><%= b.price - (b.price*(b.tax/100.0)) %></td>
-          <td>1</td>
-          <td>25</td>
-          <td><%=
-            begin
-              discount = BillsService.where(bill_id: @bill.id, service_id: b.id).first.discount
-              discount.present? ? discount : "0" 
-            rescue
-              "0"
-            end
-            %></td>
-          <td><%= b.grand_total.round(2) %></td>
-        </tr>
+        <%if b.class.name == "Service"%>
+          <tr>
+            <td><%= b.name %></td>
+            <td><%= b.price.round(2) %></td>
+            <td>1</td>
+            <td><%= b.grand_total.round(2) %></td>
+            <td>25</td>
+            <td><%=
+              begin
+                discount = BillsService.where(bill_id: @bill.id, service_id: b.id).first
+                discount.present? ? discount.discount : "0" 
+              rescue
+                "0"
+              end
+              %></td>
+            <td><%= discount.discounted_price.round(2) %></td>
+          </tr>
+        <%else%>
+          <tr>
+            <td><%= b.name %></td>
+            <td><%= b.discounted_net.round(2) %></td>
+            <td>1</td>
+            <td><%= b.grand_total.round(2) %></td>
+            <td>25</td>
+            <td><%=
+              begin
+                b.discount.present? ? b.discount : "0" 
+              rescue
+                "0"
+              end
+              %></td>
+            <td><%= b.discounted_price.round(2) %></td>
+          </tr>
+        <%end%>  
       <% end %>
     </tbody>
   </table>

@@ -11,16 +11,18 @@ class Bill < ApplicationRecord
     "DBM-" + self.id.to_s.rjust(6, '0')
   end
 
-  def sub_total
-    items.sum(:price) + services.sum(:price)
+  def grand_total
+    items.sum(:discounted_price) + services.sum(:discounted_price)
   end
 
-  def grand_total
-    items.sum(:grand_total) + services.sum(:grand_total)
+  def sub_total
+    # items.sum(:discounted_net) + services.sum(:discounted_net)
+    (grand_total - (grand_total * 25)/100)
   end
+
 
   def cal_tax
-    (sub_total * 25)/100
+    (grand_total * 25)/100
   end
 
   private

@@ -2,8 +2,9 @@
   <div class="form-inputs">
     <%= f.text_field :title, class: "form-control", required: true, placeholder: "Navn" %>
     <%= f.email_field :email, class: "form-control", required: true, placeholder: "e-post" %>
-    <%= f.text_field :phone_number, class: "form-control", required: true, placeholder: "Tlf: 12345678" %>
+    <%= f.text_field :phone_number, class: "form-control", required: true, placeholder: "Tlf" %>
     <%= f.text_field :license_no, class: "form-control", required: true, placeholder: "Reg. nummer: AA-55555" %>
+    <%= f.text_area :address, class: "form-control", placeholder: "Adresse" %>
     <%= f.text_area :description, class: "form-control", placeholder: "Beskrivelse" %>
     <%= f.hidden_field :start, as: :hidden, value: Date.today, class: 'input-sm start_hidden' %>
     <%= f.hidden_field :end, as: :hidden, value: Date.today, class: 'input-sm end_hidden' %>

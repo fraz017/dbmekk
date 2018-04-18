@@ -9,6 +9,14 @@ ActiveAdmin.register Event, as: "Bookings" do
   action_item :only => :index do
     link_to "New Booking", "/admin/dashboard"
   end
+  action_item :only => :show do
+    span do 
+      link_to "View Bill", "/generate_bill/#{resource.bill.id}.pdf", class: "btn btn-primary", style: "float:right;"
+    end
+    span do 
+      link_to "Edit Bill", "/admin/bills/#{resource.bill.id}/edit", class: "btn btn-primary", style: "float:right;"
+    end
+  end
   # or
   #
   # permit_params do
@@ -67,6 +75,7 @@ ActiveAdmin.register Event, as: "Bookings" do
       f.input :booking_time, :as => :time_picker, placeholder: ""
       f.input :start, :input_html => {:value => f.object.start || params[:start]}, as: :hidden
       f.input :end, :input_html => {:value => f.object.end || params[:end]}, as: :hidden
+      f.input :address, placeholder: "Address"
       f.input :description, placeholder: "Description"
     end
     f.inputs "Services", for: [:bill, f.object.bill || Bill.new] do |meta_form|

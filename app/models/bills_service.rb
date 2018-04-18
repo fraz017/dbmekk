@@ -1,13 +1,14 @@
 class BillsService < ApplicationRecord
   belongs_to :bill
   belongs_to :service
-  after_save :add_price
+  before_save :add_price
 
   def add_price
-    self.service.grand_total = self.service.price
+    self.discounted_net = self.service.price
+    self.discounted_price = self.service.grand_total
     if self.discount.present?
-      self.service.grand_total = self.service.grand_total-(self.service.grand_total*self.discount/100)
-      self.service.save
+      self.discounted_price = self.service.grand_total-(self.service.grand_total*self.discount/100)
+      self.discounted_net = self.service.price-(self.service.price*self.discount/100)
     end
   end
 end
