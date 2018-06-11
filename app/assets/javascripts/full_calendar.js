@@ -43,11 +43,11 @@ initialize_calendar = function() {
       element.popover({
         animation:true,
         delay: 300,
-        content: "bestilt",
+        content: "",
         trigger: 'hover',
         placement: 'top'
       });
-      element.find('.fc-title').html("bestilt");
+      element.find('.fc-title').html("");
       var ntoday = new Date().getTime();
       var eventEnd = moment( event.end ).valueOf();
       var eventStart = moment( event.start ).valueOf();
